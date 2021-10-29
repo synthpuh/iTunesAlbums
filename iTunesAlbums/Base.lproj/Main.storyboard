@@ -1,24 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QLD-3R-GIX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--History-->
+        <scene sceneID="SdP-TI-Oy3">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="S3H-0y-92t" customClass="HistoryViewController" customModule="iTunesAlbums" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TmV-vm-ORY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GJu-UB-b7f">
+                                <rect key="frame" x="0.0" y="44" width="414" height="753"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchCell" id="4Cp-9m-6cK">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Cp-9m-6cK" id="kRz-M8-mu0">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="S3H-0y-92t" id="86u-lu-TtW"/>
+                                    <outlet property="delegate" destination="S3H-0y-92t" id="GfL-FJ-D13"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Zhn-I3-DKb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GJu-UB-b7f" firstAttribute="top" secondItem="Zhn-I3-DKb" secondAttribute="top" id="Oin-Kj-ft2"/>
+                            <constraint firstItem="GJu-UB-b7f" firstAttribute="trailing" secondItem="Zhn-I3-DKb" secondAttribute="trailing" id="PI1-mL-VK7"/>
+                            <constraint firstItem="Zhn-I3-DKb" firstAttribute="bottom" secondItem="GJu-UB-b7f" secondAttribute="bottom" constant="16" id="Q8D-vx-ovd"/>
+                            <constraint firstItem="GJu-UB-b7f" firstAttribute="leading" secondItem="Zhn-I3-DKb" secondAttribute="leading" id="rBj-07-dUq"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="History" image="music.note.list" catalog="system" id="mCt-rw-DzS"/>
+                    <connections>
+                        <outlet property="historyTableView" destination="GJu-UB-b7f" id="Xec-3L-fyB"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xoa-IH-vvn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1318.840579710145" y="223.66071428571428"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="sIM-n8-vbC">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jbd-ZH-D13" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="CAy-e5-8BS" customClass="SearchViewController" customModule="iTunesAlbums" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xI6-Ia-Mrv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8MV-DB-dUj">
+                                <rect key="frame" x="0.0" y="95" width="414" height="718"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="vYn-ZP-WfB">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="5V2-ri-Yer">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search album" translatesAutoresizingMaskIntoConstraints="NO" id="ykD-6J-Vcj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="N6c-fz-O2Q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8MV-DB-dUj" firstAttribute="bottom" secondItem="N6c-fz-O2Q" secondAttribute="bottom" id="1ly-Q7-Nu5"/>
+                            <constraint firstItem="8MV-DB-dUj" firstAttribute="top" secondItem="ykD-6J-Vcj" secondAttribute="bottom" id="9xu-PA-cOV"/>
+                            <constraint firstItem="8MV-DB-dUj" firstAttribute="leading" secondItem="N6c-fz-O2Q" secondAttribute="leading" id="Scf-Um-Inm"/>
+                            <constraint firstItem="ykD-6J-Vcj" firstAttribute="top" secondItem="N6c-fz-O2Q" secondAttribute="top" id="WkT-Uz-GXZ"/>
+                            <constraint firstItem="5V2-ri-Yer" firstAttribute="centerX" secondItem="xI6-Ia-Mrv" secondAttribute="centerX" id="ZWZ-7w-dXL"/>
+                            <constraint firstItem="5V2-ri-Yer" firstAttribute="centerY" secondItem="xI6-Ia-Mrv" secondAttribute="centerY" id="Zk0-SC-wZD"/>
+                            <constraint firstItem="8MV-DB-dUj" firstAttribute="trailing" secondItem="N6c-fz-O2Q" secondAttribute="trailing" id="iep-0t-NoC"/>
+                            <constraint firstItem="ykD-6J-Vcj" firstAttribute="trailing" secondItem="8MV-DB-dUj" secondAttribute="trailing" id="oxo-sE-alM"/>
+                            <constraint firstItem="ykD-6J-Vcj" firstAttribute="leading" secondItem="8MV-DB-dUj" secondAttribute="leading" id="yA4-vN-bPc"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="1Vx-mx-1lS"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="5V2-ri-Yer" id="dRd-N2-doM"/>
+                        <outlet property="collectionView" destination="8MV-DB-dUj" id="fcE-Jd-pqN"/>
+                        <outlet property="searchBar" destination="ykD-6J-Vcj" id="DdO-qN-mJ1"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1319" y="-457"/>
+        </scene>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="ZYI-EZ-4ni">
+            <objects>
+                <tabBarController id="QLD-3R-GIX" customClass="MainTabBarController" customModule="iTunesAlbums" customModuleProvider="target" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yTG-Oh-xc5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemPinkColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="CAy-e5-8BS" kind="relationship" relationship="viewControllers" id="cnq-NP-byA"/>
+                        <segue destination="S3H-0y-92t" kind="relationship" relationship="viewControllers" id="q0H-a1-J4L"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nRp-mS-sQf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="422" y="-121"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="music.note.list" catalog="system" width="128" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
